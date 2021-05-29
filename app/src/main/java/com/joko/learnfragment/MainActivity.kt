@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                     R.anim.fade_in,
                     R.anim.slide_out
                 )
+                addSharedElement(findViewById(R.id.button1), "buton_trans")
                 replace<Example2Fragment>(R.id.fragment_container_view)
                 addToBackStack(null)
             }
