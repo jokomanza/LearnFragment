@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
                 val instance = ExampleFragment()
+                instance.arguments = bundle
                 add(R.id.fragment_container_view, instance)
             }
         }
