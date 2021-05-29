@@ -14,14 +14,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportFragmentManager.fragmentFactory = FragmentFactory(ExampleRepository())
 
         if (savedInstanceState == null) {
             val bundle = bundleOf("some_int" to 666)
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                val instance = ExampleFragment()
-                instance.arguments = bundle
-                add(R.id.fragment_container_view, instance)
+                add<ExampleFragment>(R.id.fragment_container_view, args = bundle)
             }
         }
 
